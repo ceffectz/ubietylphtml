@@ -202,7 +202,8 @@ width: 30%;
 
 .cust-table-title{
 
-	font-family: 'open_sansbold';
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .cust-title1{
@@ -245,8 +246,8 @@ width: 90%;
 }
 
 .header-title1{
-font-family: 'open_sanslight', sans-serif !important;
-font-weight: 100;
+font-family: 'Open Sans', sans-serif;
+font-weight: 300;
 font-size: 30px;
 margin-top: 40px;
 margin-bottom: 18px;

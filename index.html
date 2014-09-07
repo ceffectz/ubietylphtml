@@ -12,21 +12,15 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom Google Web Font -->
-    
-    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
-    
-    <link rel="stylesheet" href="fonts/web-fonts/opensans_light/stylesheet.css" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="fonts/web-fonts/opensans_regular/stylesheet.css" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="fonts/web-fonts/opensans_bold/stylesheet.css" type="text/css" charset="utf-8" />
-
     <!-- Add custom CSS here -->
     <link href="css/landing-page.css" rel="stylesheet">
     
     <!-- Add second custom CSS here -->
     <link href="css/custom.css" rel="stylesheet">
     
-     <!-- Add Button CSS here -->
+     <!-- JS here -->
+    
+    <script src="js/bootstrap.js"></script>
 
     
     <!-- Add slider Js here -->
@@ -85,12 +79,23 @@
 				});
 			});
 		</script>
-		
     
 
 </head>
 
-<body>
+<body onload="countPopup();">
+<script type="text/javascript">
+function countPopup()
+{
+setTimeout("Popup()",7000);
+return false;
+}
+function Popup()
+{
+window.open('http://co2neutralconferencing.us6.list-manage2.com/subscribe?u=f8c9d2d42e9b5f4df9489950d&id=ecb915ce30','_blank');
+}
+</script>
+    
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
@@ -160,7 +165,7 @@
                 
                 <h1 class="header-title1">Video-web-audio collaboration interoperability solved</h1>
                 
-                <p><strong class="header-title3">Join from: Below methods</strong></p>
+                <p class="header-title3">Join from: Below methods</p>
                 
                 
 				<div id="pager-wrapper">
@@ -532,7 +537,7 @@ integration if you want.
 			<img alt="140x140" src="img/phone2.png" />
 		</div>
 		<div class="col-md-4 column text-left" style="margin-top: 110px; width:37.5%;">
-			<ul>
+			<div>
 				<li class="cust-li">
 					<span class="glyphicon glyphicon-ok-circle right-icon"></span>Personal coSpace virtual meeting rooms for every user
 				</li>
@@ -550,7 +555,7 @@ integration if you want.
 
 				</li>
 			
-			</ul>
+			</div>
 		</div>
 		
 	</div>
@@ -684,7 +689,7 @@ Our goal? the more you collaborate with your employees, customers and partners, 
                        <li><a href="#press" class="footer-links">Press</a>
                        </li>
                    </ul>
-                   <p class="copyright text-muted small">&copy; 2014 Ubiety. All Rights Reserved. Designed by <a href="http://www.ceffectz.com" target="_blank"></a>ceffectz</a></p>
+                   <p class="copyright text-muted small">&copy; 2014 Ubiety. All Rights Reserved. Designed by <a href="http://www.ceffectz.com" target="_blank">ceffectz</a></p>
                    </div>
                </div>
         </div>
@@ -692,9 +697,43 @@ Our goal? the more you collaborate with your employees, customers and partners, 
        </div>
    </footer>
 
-    
-    
    
+<script src="js/classie.js"></script>
+		<script src="js/svgLoader.js"></script>
+		<script>
+			(function() {
+				var pageWrap = document.getElementById( 'pagewrap' ),
+					pages = [].slice.call( pageWrap.querySelectorAll( 'div.container' ) ),
+					currentPage = 0,
+					triggerLoading = [].slice.call( pageWrap.querySelectorAll( 'a.pageload-link' ) ),
+					loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 300, easingIn : mina.easeinout } );
+
+				function init() {
+					triggerLoading.forEach( function( trigger ) {
+						trigger.addEventListener( 'click', function( ev ) {
+							ev.preventDefault();
+							loader.show();
+							// after some time hide loader
+							setTimeout( function() {
+								loader.hide();
+
+								classie.removeClass( pages[ currentPage ], 'show' );
+								// update..
+								currentPage = currentPage ? 0 : 1;
+								classie.addClass( pages[ currentPage ], 'show' );
+
+							}, 2000 );
+						} );
+					} );	
+				}
+
+				init();
+			})();
+		</script>
+
+<!-- Custom Theme JavaScript -->
+   <script src="js/ubiety.js"></script>
+
 
 </body>
 
