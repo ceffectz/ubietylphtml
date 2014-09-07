@@ -212,3 +212,126 @@ p.copyright {
     float: right;
 
 }
+
+.cus-font-color {
+
+    color: #02aede;
+
+}
+
+
+
+
+
+.btn {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.btn:after {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Button 1 */
+.btn-1 {
+	border: 1px solid #00b0e2;
+	color: #02aede;
+    background: #ffffff;
+    padding: 10px 35px;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+
+/* Button 1a */
+.btn-1a:hover,
+.btn-1a:active {
+	color: #ffffff;
+	background: #00afe1;
+}
+
+
+
+
+
+/* Button 2 */
+.btn-2 {
+	border: 1px solid #00afe1;
+    color: #ffffff;
+	background: #00afe1;
+    padding: 10px 35px;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+
+/* Button 2a */
+.btn-2a:hover,
+.btn-2a:active {
+	color: #02aede;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+
+
+
+/* Free Trial - Button 3 */
+.btn-3 {
+    border: 1px solid #27ca94;
+    color: #ffffff;
+    background: #27ca94;
+    padding: 6px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 18px;
+    margin-right: 15px;
+}
+
+/* Free Trial - Button 3a */
+.btn-3a:hover,
+.btn-3a:active {
+	color: #ffffff;
+    background: #12ad7a;
+    border: 1px solid #12ad7a;
+}
+
+
+
+/* Join/Host - Button 4 */
+.btn-4 {
+    border: 1px solid #00aee0;
+    color: #00aee0;
+    background: transparent;
+    padding: 6px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 18px;
+}
+
+/* Join/Host - Button 4a */
+.btn-4a:hover,
+.btn-4a:active {
+	color: #ffffff;
+    background: #00aee0;
+    border: 1px solid #00aee0;
+}
+
+
+
+
+/* Slider */
+
+#carousel-wrapper {
+    margin-top: 68px;
+
+}
+
+#pager {
+    margin-top:30px;
+
+}

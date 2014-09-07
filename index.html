@@ -26,12 +26,67 @@
     <!-- Add second custom CSS here -->
     <link href="css/custom.css" rel="stylesheet">
     
-     <!-- Add slider CSS here -->
-    <link href="css/slider.css" rel="stylesheet">
+     <!-- Add Button CSS here -->
+
     
     <!-- Add slider Js here -->
     <script src="js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="js/MicroSlider.js"></script> 
+    <script src="js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $carousel = $('#carousel'),
+					$pager = $('#pager');
+
+				function getCenterThumb() {
+					var $visible = $pager.triggerHandler( 'currentVisible' ),
+						center = Math.floor($visible.length / 2);
+					
+					return center;
+				}
+
+				$carousel.carouFredSel({
+					responsive: true,
+					items: {
+						visible: 1,
+						width: 800,
+						height: (400/800*100) + '%'
+					},
+					scroll: {
+						fx: 'crossfade',
+						onBefore: function( data ) {
+							var src = data.items.visible.first().attr( 'src' );
+							src = src.split( '/large/' ).join( '/small/' );
+
+							$pager.trigger( 'slideTo', [ 'img[src="'+ src +'"]', -getCenterThumb() ] );
+							$pager.find( 'img' ).removeClass( 'selected' );
+						},
+						onAfter: function() {
+							$pager.find( 'img' ).eq( getCenterThumb() ).addClass( 'selected' );
+						}
+					}
+				});
+				$pager.carouFredSel({
+					width: '100%',
+					auto: false,
+					height: 120,
+					items: {
+						visible: 'odd'
+					},
+					onCreate: function() {
+						var center = getCenterThumb();
+						$pager.trigger( 'slideTo', [ -center, { duration: 0 } ] );
+						$pager.find( 'img' ).eq( center ).addClass( 'selected' );
+					}
+				});
+				$pager.find( 'img' ).click(function() {
+					var src = $(this).attr( 'src' );
+					src = src.split( '/small/' ).join( '/large/' );
+					$carousel.trigger( 'slideTo', [ 'img[src="'+ src +'"]' ] );
+				});
+			});
+		</script>
+		
     
 
 </head>
@@ -67,10 +122,15 @@
                     </li>
                     <li><a href="#contact">Blog</a>
                     </li>
-                    <li><a href="#" class="btn btn-default btn-lg btn-lg-cust btn-cust-green"><i class=""></i> <span class="network-name">Free Trail</span></a>
+                    
+                    <li>
+                    <button class="btn btn-3 btn-3a">Free Trail</button>
                     </li>
-                    <li><a href="#" class="btn btn-default btn-lg btn-lg-cust btn-cust-blue-trans"><i class=""></i> <span class="network-name">Join/Host meeting</span></a>
+                    
+                    <li>
+                    <button class="btn btn-4 btn-4a">Join/Host meeting</button>
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -85,63 +145,46 @@
             <div class="row">
                 <div class="col-lg-12">
                    
-                    <div class="intro-message">
-<div class="xm-rorate" id="id-xm-rorate">
-<ul class="xm-rorate-img clearfix" id="id-xm-content">
-<li><a href="http://www.vmovier.com/" target="_blank"><img src="img/banner1.png" alt="#"></a></li>
-<li><a href="http://www.vmovier.com/" target="_blank"><img src="img/banner1.png" alt="#"></a></li>
-<li><a href="http://www.vmovier.com/" target="_blank"><img src="img/banner1.png" alt="#"></a></li>
-<li><a href="http://www.vmovier.com/" target="_blank"><img src="img/banner1.png" alt="#"></a></li>
-<li><a href="http://www.vmovier.com/" target="_blank"><img src="img/banner1.png" alt="#"></a></li>
-</ul>
-<ul class="xm-rorate-con clearfix" id="id-xm-control">
-<li><img src="img/banner1.png" alt=""></li>
-<li><img src="2.jpg" alt=""></li>
-<li><img src="3.jpg" alt=""></li>
-<li><img src="4.jpg" alt=""></li>
-<li><img src="5.jpg" alt=""></li>
-<li class="xm-rorate-slider" id="id-xm-slider"></li>
-</ul>
-</div>
+                    <div>
+                    
+                    <div id="wrapper">
+			<div id="inner">
+				<div id="carousel-wrapper">
+					<div id="carousel">
+						<img src="img/large/snow1.jpg" width="800" height="500" />
+						<img src="img/large/snow2.jpg" width="800" height="500" />
+						<img src="img/large/snow3.jpg" width="800" height="500" />
+						<img src="img/large/snow4.jpg" width="800" height="500" />
+						<img src="img/large/snow5.jpg" width="800" height="500" />
+						<img src="img/large/snow6.jpg" width="800" height="500" />
+						<img src="img/large/snow7.jpg" width="800" height="500" />
 
+					</div>
+				</div>
+                
+                
+                <div class="header-title1"><p class="cust-title1">Video-web-audio collaboration interoperability solved<br><strong class="header-title3">Join from: Any browser</strong></p></div>
+                
+                
+				<div id="pager-wrapper">
+					<div id="pager">
+						<img src="img/small/snow1.jpg" width="80" height="80" />
+						<img src="img/small/snow2.jpg" width="80" height="80" />
+						<img src="img/small/snow3.jpg" width="80" height="80" />
+						<img src="img/small/snow4.jpg" width="80" height="80" />
+						<img src="img/small/snow5.jpg" width="80" height="80" />
+						<img src="img/small/snow6.jpg" width="80" height="80" />
+						<img src="img/small/snow7.jpg" width="80" height="80" />
 
-<script type="text/javascript">
-$(function(){
-	$('#id-xm-rorate').Microslider();
-});
-</script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-                 <div class="header-title1"><p class="cust-title1" class="header-title2">Video-web-audio collaboration interoperability solved<br><strong class="header-title3">Join from: Any browser</strong></p></div> 
-                   
-                   <ul class="list-inline">
-                        <li><img src="img/icon1.png" alt="">
-                        </li>
-                       
-                        <li><img src="img/icon2.png" alt="">
-                        </li>
-                       
-                        <li><img src="img/icon3.png" alt="">
-                        </li>
-                        
-                        <li><img src="img/icon4.png" alt="">
-                        </li>
-                        <li><img src="img/icon5.png" alt="">
-                        </li>
-                    </ul>
-                    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+                    
+             </div>       
+                    
+                    
+                    
                     
                     <img src="img/down.png" alt="">
                     
@@ -189,7 +232,7 @@ conferencing to an unprecedented new level with a simplified intuitive user inte
 
  <div class="row clearfix">
 		<div class="col-md-12 column">
-		<div style="font-size: 30px;" class="text-center">Sign Up today for &nbsp;<strong><a href="" style="color: #00aee0;">FREE 30 days trial</a></strong> and newsletter<a id="custom-id-0" class="btn btn-default btn-lg btn-margin-cust btn-cust-blue" style="margin-left: 20px; padding: 10px 55px;" href="#" target="_self">Sign Up</a></div>
+		<div style="font-size: 30px;" class="text-center">Sign Up today for &nbsp;<strong class="cus-font-color">FREE 30 days trial</strong> and newsletter<a id="custom-id-0" class="btn btn-default btn-lg btn-margin-cust btn-cust-blue" style="margin-left: 20px; padding: 10px 55px;" href="#" target="_self">Sign Up</a></div>
 <p></p></div>
 		</div>
 	</div>
@@ -291,10 +334,10 @@ And many more...
                                 <p class="cust-para1">
 
 The beauty of this tool is the bridge knows you are located at this endpoint and you have full call control from the same personal device to manage all aspects of your conference.</p>
-                     <button type="button" class="btn btn-default btn-lg btn-cust-blue-trans cust-btn-size">Learn More</button>
+                     <button class="btn btn-1 btn-1a">Learn More</button>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/push-video-left.png" alt="">
+                    <img class="cus-img" src="img/push-video-left.png" alt="">
                 </div>
             </div>
 
@@ -311,7 +354,7 @@ The beauty of this tool is the bridge knows you are located at this endpoint and
 
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                  <img class="img-responsive" src="img/push-video-right.png" alt="">  
+                  <img class="cus-img" src="img/push-video-right.png" alt="">  
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     
@@ -321,7 +364,7 @@ The beauty of this tool is the bridge knows you are located at this endpoint and
                     <p class="cust-para1">
 When connecting to a Cisco, Polycom or LifeSize endpoint from Ubiety, using wires for content sharing is a thing of the past. From the PC/Mac client or web browser share your content wirelessly to the endpoint and all remote participants with a click of a button.
 </p>
-                     <button type="button" class="btn btn-default btn-lg btn-cust-blue-trans cust-btn-size">Learn More</button>
+                     <button class="btn btn-1 btn-1a">Learn More</button>
                 </div>
             </div>
 
@@ -338,7 +381,7 @@ When connecting to a Cisco, Polycom or LifeSize endpoint from Ubiety, using wire
 
 <div class="row clearfix">
 		<div class="col-md-12 column text-center">
-			<img class="cust-img-size" alt="140x140" src="img/lapntab.png" />
+			<img class="cus-img" alt="140x140" src="img/lapntab.png" />
 			<h3 class="cust-title1">
 				Transfer devices mid-conference
 			</h3>
@@ -350,7 +393,7 @@ When connecting to a Cisco, Polycom or LifeSize endpoint from Ubiety, using wire
 			<p>With Ubiety you can now transfer the video or audio call from any device mid-call. Within the app simply click to transfer and your call will be 
 magically moved.
 </p>
-			<button type="button" class="btn btn-default btn-lg btn-cust-blue-trans cust-btn-size">Learn More</button>
+			<button class="btn btn-1 btn-1a">Learn More</button>
 		</div>
 	</div>
 
@@ -381,7 +424,7 @@ magically moved.
 			<p class="cust-para1">
 			With Ubiety, you can split the audio from your tablet to your mobile phone via the standard phone network. You still experience the great video and web collaboration on your tablet, but audio is delivered to your phone, guaranteeing consistent audio quality and privacy in a public place. The video and audio are still synced, so when you speak your video window will show as the active speaker to all other participants.
 			</p> 
-			<button type="button" class="btn btn-default btn-lg btn-cust-blue-trans cust-btn-size">Learn More</button>
+			<button class="btn btn-1 btn-1a">Learn More</button>
 		</div>
 		
 	</div>
@@ -399,7 +442,7 @@ magically moved.
 
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                  <img class="img-responsive" src="img/landphone.png" alt="">  
+                  <img class="cus-img" src="img/landphone.png" alt="">  
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     
@@ -415,7 +458,7 @@ expect and what’s more, you can use Ubiety as a flawless phone conferencing
 service with the ability to add the incredible web and video collaboration 
 integration if you want.
 </p>
-                     <button type="button" class="btn btn-default btn-lg btn-cust-blue-trans cust-btn-size">Learn More</button>
+                     <button class="btn btn-1 btn-1a">Learn More</button>
                 </div>
                 
             </div>
@@ -579,7 +622,7 @@ integration if you want.
 			<h3 class="cust-title1">
 				Pricing
 			</h3>
-			<img class="cust-img-size" alt="140x140" src="img/price_chart.png" />
+			<img class="cus-img" alt="140x140" src="img/price_chart.png" />
 		</div>
 	</div>
 
@@ -606,7 +649,7 @@ integration if you want.
 We are committed to being 100% carbon neutral and for every conference minute you use on Ubiety we will donate a conference minute to a charitable cause.
 Our goal? the more you collaborate with your employees, customers and partners, the more we can enable collaboration for those that need it most.
 			</p> 
-			<button type="button" class="btn btn-default btn-lg btn-cust-blue cust-btn-size">Learn More</button>
+			<button class="btn btn-2 btn-2a">Learn More</button>
 		</div>
 	</div>
 
