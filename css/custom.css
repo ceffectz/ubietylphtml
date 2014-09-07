@@ -206,6 +206,18 @@ width: 30%;
     font-weight: 700;
 }
 
+.cust-icon-name{
+    
+width: 55px;
+height: 25px;
+color: #98a4af;
+font-size: 11px;
+margin-left: 20px;
+margin-right: 6px;
+text-align: center;
+display: inline-block;
+}
+
 .cust-title1{
 font-size: 30px;
 padding-top: 45px;

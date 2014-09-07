@@ -16,6 +16,32 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+a {
+
+    color: #02aede;
+    
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
 p {
     font-size: 16px;
     line-height: 24px;
@@ -222,6 +248,11 @@ p.copyright {
 }
 
 
+.btn-1a:hover > a {
+
+    color: #ffffff !important;
+
+}
 
 
 
@@ -239,9 +270,9 @@ p.copyright {
 /* Button 2a */
 .btn-2a:hover,
 .btn-2a:active {
-	color: #02aede;
-    background: #ffffff;
-    border: 1px solid #ffffff;
+	color: #ffffff;
+    background: #0591b9;
+    border: 1px solid #0591b9;
 }
 
 
@@ -283,9 +314,15 @@ p.copyright {
 /* Join/Host - Button 4a */
 .btn-4a:hover,
 .btn-4a:active {
-	color: #ffffff;
+	color: #ffffff !important;
     background: #00aee0;
     border: 1px solid #00aee0;
+}
+
+.btn-4a:hover > a {
+
+    color: #ffffff !important;
+
 }
 
 
@@ -304,7 +341,7 @@ p.copyright {
 /* Free Trial - Button 5a */
 .btn-5a:hover,
 .btn-5a:active {
-	color: #ffffff;
+	color: #ffffff !important;
     background: #0591b9;
     border: 1px solid #0591b9;
 }
@@ -349,3 +386,7 @@ width: 650px;
 color: #58626a;
 
 }
+
+
+
+
