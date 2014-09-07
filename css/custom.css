@@ -60,6 +60,8 @@ background-size: cover;
 .footer-banner2 {
 background: url(../img/footer_banner2_trans.png) no-repeat center center;
 background-size: cover;
+    padding-top: 45px;
+padding-bottom: 60px;
 }
 
 
@@ -206,6 +208,16 @@ width: 30%;
 .cust-title1{
 font-size: 30px;
 padding-top: 45px;
+}
+
+.cust-title-main {
+font-size: 30px;
+}
+
+.cus-title-pricing {
+font-size: 30px;
+margin-top: 45px;
+
 }
 
 .cust-para1{
