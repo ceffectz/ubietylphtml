@@ -31,7 +31,6 @@
     
     <!-- Add slider Js here -->
     <script src="js/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="js/MicroSlider.js"></script> 
     <script src="js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function() {
@@ -50,7 +49,7 @@
 					items: {
 						visible: 1,
 						width: 800,
-						height: (400/800*100) + '%'
+						height: 420/800*100) + '%'
 					},
 					scroll: {
 						fx: 'crossfade',
@@ -82,7 +81,7 @@
 				$pager.find( 'img' ).click(function() {
 					var src = $(this).attr( 'src' );
 					src = src.split( '/small/' ).join( '/large/' );
-					$carousel.trigger( 'slideTo', [ 'img[src="'+ src +'"]' ] );
+					//$carousel.trigger( 'slideTo', [ 'img[src="'+ src +'"]' ] );
 				});
 			});
 		</script>
@@ -94,6 +93,7 @@
 <body>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -151,30 +151,26 @@
 			<div id="inner">
 				<div id="carousel-wrapper">
 					<div id="carousel">
-						<img src="img/large/snow1.jpg" width="800" height="500" />
-						<img src="img/large/snow2.jpg" width="800" height="500" />
-						<img src="img/large/snow3.jpg" width="800" height="500" />
-						<img src="img/large/snow4.jpg" width="800" height="500" />
-						<img src="img/large/snow5.jpg" width="800" height="500" />
-						<img src="img/large/snow6.jpg" width="800" height="500" />
-						<img src="img/large/snow7.jpg" width="800" height="500" />
+						<img src="img/large/banner1.png" width="800" height="420" />
+
 
 					</div>
 				</div>
                 
                 
-                <div class="header-title1"><p class="cust-title1">Video-web-audio collaboration interoperability solved<br><strong class="header-title3">Join from: Any browser</strong></p></div>
+                <h1 class="header-title1">Video-web-audio collaboration interoperability solved</h1>
+                
+                <p><strong class="header-title3">Join from: Below methods</strong></p>
                 
                 
 				<div id="pager-wrapper">
 					<div id="pager">
-						<img src="img/small/snow1.jpg" width="80" height="80" />
-						<img src="img/small/snow2.jpg" width="80" height="80" />
-						<img src="img/small/snow3.jpg" width="80" height="80" />
-						<img src="img/small/snow4.jpg" width="80" height="80" />
-						<img src="img/small/snow5.jpg" width="80" height="80" />
-						<img src="img/small/snow6.jpg" width="80" height="80" />
-						<img src="img/small/snow7.jpg" width="80" height="80" />
+						<img src="img/small/icon1.png" width="80" height="80" />
+						<img src="img/small/icon2.png" width="80" height="80" />
+						<img src="img/small/icon3.png" width="80" height="80" />
+						<img src="img/small/icon4.png" width="80" height="80" />
+						<img src="img/small/icon5.png" width="80" height="80" />
+						<img src="img/small/icon6.png" width="80" height="80" />
 
 					</div>
 				</div>
@@ -183,12 +179,7 @@
                     
              </div>       
                     
-                    
-                    
-                    
-                    <img src="img/down.png" alt="">
-                    
-                    
+                   <!-- <br><img src="img/down.png" alt=""> -->
                     
                 </div>
             </div>
@@ -232,7 +223,7 @@ conferencing to an unprecedented new level with a simplified intuitive user inte
 
  <div class="row clearfix">
 		<div class="col-md-12 column">
-		<div style="font-size: 30px;" class="text-center">Sign Up today for &nbsp;<strong class="cus-font-color">FREE 30 days trial</strong> and newsletter<a id="custom-id-0" class="btn btn-default btn-lg btn-margin-cust btn-cust-blue" style="margin-left: 20px; padding: 10px 55px;" href="#" target="_self">Sign Up</a></div>
+		<div style="font-size: 30px;" class="text-center">Sign Up today for &nbsp;<strong class="cus-font-color">FREE 30 days trial</strong> and newsletter<button class="btn btn-5 btn-5a" style="margin-left: 210px; padding: 10px 55px;">Sign Up</button> </div>
 <p></p></div>
 		</div>
 	</div>
@@ -336,9 +327,13 @@ And many more...
 The beauty of this tool is the bridge knows you are located at this endpoint and you have full call control from the same personal device to manage all aspects of your conference.</p>
                      <button class="btn btn-1 btn-1a">Learn More</button>
                 </div>
+                
+                
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="cus-img" src="img/push-video-left.png" alt="">
                 </div>
+                
+                
             </div>
 
         </div>
@@ -353,10 +348,8 @@ The beauty of this tool is the bridge knows you are located at this endpoint and
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                  <img class="cus-img" src="img/push-video-right.png" alt="">  
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                
+                <div class="col-lg-5">
                     
                     <div class="clearfix"></div>
                     <h2 class="cust-title1">Wireless screen sharing</h2>
@@ -366,6 +359,11 @@ When connecting to a Cisco, Polycom or LifeSize endpoint from Ubiety, using wire
 </p>
                      <button class="btn btn-1 btn-1a">Learn More</button>
                 </div>
+                
+                <div class="col-lg-5">
+                  <img class="cus-image-1" src="img/push-video-right.png" alt="">  
+                </div>
+                
             </div>
 
         </div>
@@ -662,78 +660,39 @@ Our goal? the more you collaborate with your employees, customers and partners, 
     
 
 
-    <footer style="background-color: #26313b;">
-        <div class="container">
-            <div class="row">
-           <div class="col-md-6 column">
-           <img src="img/logo.png" alt="">
-		</div>
-		<div class="col-md-6 column">
-		<div style="float: right;">
-                    <ul class="list-inline">
-                        <li><a href="#home">Press</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a href="#about">Partners</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a href="#services">Acano</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a href="#contact">Support</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">&copy; 2014 Ubiety. All Rights Reserved</p>
-                    </div>
-                </div>
-		</div>
-            </div>
+    <footer style="background-color: #26313b ;">
+       <div class="container">
+           <div class="row">
+          <div class="col-md-6 column">
+          <img src="img/logo.png" alt="">
         </div>
-    </footer>
+        <div class="col-md-6 column">
+        <div style="float: right;">
+                   <ul class="list-inline">
+                       <li><a href="#contact" class="footer-links">Contact us</a>
+                       </li>
+                       <li class="footer-menu-divider">&sdot;</li>
+                       <li ><a href="#support" class="footer-links">Support</a>
+                       </li>
+                       <li class="footer-menu-divider">&sdot;</li>
+                       <li><a href="#acano" class="footer-links">Acano</a>
+                       </li>
+                       <li class="footer-menu-divider">&sdot;</li>
+                       <li><a href="#partners" class="footer-links">Partners</a>
+                       </li>
+                       <li class="footer-menu-divider">&sdot;</li>
+                       <li><a href="#press" class="footer-links">Press</a>
+                       </li>
+                   </ul>
+                   <p class="copyright text-muted small">&copy; 2014 Ubiety. All Rights Reserved. Designed by <a href="http://www.ceffectz.com" target="_blank"></a>ceffectz</a></p>
+                   </div>
+               </div>
+        </div>
+           </div>
+       </div>
+   </footer>
 
-    <!-- JavaScript -->
     
-    <script src="js/bootstrap.js"></script>
-    
-    <!-- Custom Theme JavaScript -->
-    <script src="js/ubiety.js"></script>
-    
-    <!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,.8);display:none;z-index:10000; }
-	#mc_embed_signup form{position:fixed; top:10%; left:50%; width:50%; margin-left:-25%; font:normal 100% Helvetica,Arial,sans-serif; font-size:14px; border-radius:4px; border:none; padding:10px 20px; background-color:#fff; color:#000; text-align:left;max-height:400px;overflow-y:auto;overflow-x:hidden;}
-	#mc_embed_signup a.mc_embed_close{background:transparent url(http://downloads.mailchimp.com/img/closebox.png) no-repeat; display:block; height:30px; width:30px; text-indent:-999em; position:absolute; top:-10px; right:-10px; display:none; }
-	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="//co2neutralconferencing.us6.list-manage.com/subscribe/post?u=f8c9d2d42e9b5f4df9489950d&amp;id=ecb915ce30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	<h2>Subscribe to our mailing list</h2>
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-<div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-</div>
-<div class="mc-field-group">
-	<label for="mce-FNAME">First Name </label>
-	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-</div>
-<div class="mc-field-group">
-	<label for="mce-LNAME">Last Name </label>
-	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-</div>
-<a href="#" id="mc_embed_close" class="mc_embed_close">Close</a>	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;"><input type="text" name="b_f8c9d2d42e9b5f4df9489950d_ecb915ce30" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text'; window.mc.showPopup = true;window.mc.delayPopup = 7000;if (mc.showPopup) mc.evalPopup();}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-<!--End mc_embed_signup-->
     
    
 

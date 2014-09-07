@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ubiety</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+    
+    <link rel="stylesheet" href="fonts/web-fonts/opensans_light/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="fonts/web-fonts/opensans_regular/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="fonts/web-fonts/opensans_bold/stylesheet.css" type="text/css" charset="utf-8" />
+
+    <!-- Add custom CSS here -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    
+    <!-- Add second custom CSS here -->
+    <link href="css/custom.css" rel="stylesheet">
+    
+     <!-- Add Button CSS here -->
+
+    
+    <!-- Add slider Js here -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/MicroSlider.js"></script> 
+    <script src="js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $carousel = $('#carousel'),
+					$pager = $('#pager');
+
+				function getCenterThumb() {
+					var $visible = $pager.triggerHandler( 'currentVisible' ),
+						center = Math.floor($visible.length / 2);
+					
+					return center;
+				}
+
+				$carousel.carouFredSel({
+					responsive: true,
+					items: {
+						visible: 1,
+						width: 800,
+						height: (400/800*100) + '%'
+					},
+					scroll: {
+						fx: 'crossfade',
+						onBefore: function( data ) {
+							var src = data.items.visible.first().attr( 'src' );
+							src = src.split( '/large/' ).join( '/small/' );
+
+							$pager.trigger( 'slideTo', [ 'img[src="'+ src +'"]', -getCenterThumb() ] );
+							$pager.find( 'img' ).removeClass( 'selected' );
+						},
+						onAfter: function() {
+							$pager.find( 'img' ).eq( getCenterThumb() ).addClass( 'selected' );
+						}
+					}
+				});
+				$pager.carouFredSel({
+					width: '100%',
+					auto: false,
+					height: 120,
+					items: {
+						visible: 'odd'
+					},
+					onCreate: function() {
+						var center = getCenterThumb();
+						$pager.trigger( 'slideTo', [ -center, { duration: 0 } ] );
+						$pager.find( 'img' ).eq( center ).addClass( 'selected' );
+					}
+				});
+				$pager.find( 'img' ).click(function() {
+					var src = $(this).attr( 'src' );
+					src = src.split( '/small/' ).join( '/large/' );
+					$carousel.trigger( 'slideTo', [ 'img[src="'+ src +'"]' ] );
+				});
+			});
+		</script>
+		
+    
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                <img class="logo-white" src="img/logo.png" alt="">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about"><span class="glyphicon glyphicon-phone"></span>
+ +1 646 480 7530</a>
+                    </li>
+                    
+                    <li><a href="#about">Features</a>
+                    </li>
+                    <li><a href="#services">Pricing</a>
+                    </li>
+                    <li><a href="#contact">Support</a>
+                    </li>
+                    <li><a href="#contact">Blog</a>
+                    </li>
+                    
+                    <li>
+                    <button class="btn btn-3 btn-3a">Free Trail</button>
+                    </li>
+                    
+                    <li>
+                    <button class="btn btn-4 btn-4a">Join/Host meeting</button>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="intro-header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                   
+                    <div>
+                    
+                    <div id="wrapper">
+			<div id="inner">
+				<div id="carousel-wrapper">
+					<div id="carousel">
+						<img src="img/large/snow1.jpg" width="800" height="500" />
+						<img src="img/large/snow2.jpg" width="800" height="500" />
+						<img src="img/large/snow3.jpg" width="800" height="500" />
+						<img src="img/large/snow4.jpg" width="800" height="500" />
+						<img src="img/large/snow5.jpg" width="800" height="500" />
+						<img src="img/large/snow6.jpg" width="800" height="500" />
+						<img src="img/large/snow7.jpg" width="800" height="500" />
+
+					</div>
+				</div>
+                
+                
+                <div class="header-title1"><p class="cus-title-header">Video-web-audio collaboration interoperability solved<br><strong class="header-title3">Join from: Any browser</strong></p></div>
+                
+                
+				<div id="pager-wrapper">
+					<div id="pager">
+						<img src="img/small/snow1.jpg" width="80" height="80" />
+						<img src="img/small/snow2.jpg" width="80" height="80" />
+						<img src="img/small/snow3.jpg" width="80" height="80" />
+						<img src="img/small/snow4.jpg" width="80" height="80" />
+						<img src="img/small/snow5.jpg" width="80" height="80" />
+						<img src="img/small/snow6.jpg" width="80" height="80" />
+						<img src="img/small/snow7.jpg" width="80" height="80" />
+
+					</div>
+				</div>
+			</div>
+		</div>
+                    
+             </div>       
+                    
+                    
+                    
+                    
+                    <img src="img/down.png" alt="">
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+   
+    <div class="content-section-b">
+
+        <div class="container">
+
+         <div class="row clearfix">
+		<div class="col-md-12 column">
+			<p style="font-size: 20px; text-align: center;">
+				
+The human connection defines us. Being present, visible and connected are the most profound aspects that make every person in the world achieve their highest level success. We’ve dedicated ourselves to enabling this for 
+everyone, everywhere.
+
+
+			</p>
+			<br>
+			<p style="font-size: 20px; text-align: center;">
+				Ubiety is the cloud collaboration platform that takes interoperability of video conferencing, web collaboration and phone 
+conferencing to an unprecedented new level with a simplified intuitive user interface.
+			</p>
+		</div>
+	</div>
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+    
+     <div class="content-section-a">
+
+        <div class="container">
+
+ <div class="row clearfix">
+		<div class="col-md-12 column">
+		<div style="font-size: 30px;" class="text-center">Sign Up today for &nbsp;<strong class="cus-font-color">FREE 30 days trial</strong> and newsletter<button class="btn btn-5 btn-5a" style="margin-left: 210px; padding: 10px 55px;">Sign Up</button> </div>
+<p></p></div>
+		</div>
+	</div>
+       <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="text-center" style="font-size: 30px">
+				Interoperability
+			</h3>
+			<br>
+			<p class="text-center" style="font-size: 16px">
+Host or join a Ubiety video conference, web conference or conference call from any device on any network.
+</p>
+		<br>
+			<div class="panel panel-default" style="margin-left: 15%; margin-right: 15%;">
+<table class="cust-table">
+  <tr>
+    <td class="cust-table-cell cust-table-title">Endpoint</td>
+    <td class="cust-table-cell cust-table-title">Software- PC / 
+Mac / iOS / Android</td>
+    <td class="cust-table-cell cust-table-title">Browser</td>
+    <td class="cust-table-cell cust-table-title">Phone</td>
+  </tr>
+  <tr>
+    <td class="cust-table-cell">Cisco</td>
+    <td class="cust-table-cell">Ubiety Client</td> 
+    <td class="cust-table-cell">Google Chrome</td>
+     <td class="cust-table-last-cell">Phone dial in phone access 
+in over 40 countries worldwide</td>
+  </tr>
+  <tr>
+    <td class="cust-table-cell">Polycom</td>
+    <td class="cust-table-cell">Microsoft Lync</td> 
+    <td class="cust-table-cell">Firefox</td>
+     <td class="cust-table-last-cell">Phone dial out to any country 
+worldwide</td>
+  </tr>
+  <tr>
+    <td class="cust-table-cell">LifeSize</td>
+    <td class="cust-table-cell">Cisco Jabber</td> 
+    <td class="cust-table-cell">Internet Explorer</td>
+     <td class="cust-table-last-cell">SIP VoIP</td>
+  </tr>
+  <tr>
+    <td class="cust-table-cell">AVer</td>
+    <td class="cust-table-cell">Polycom Realpresence</td> 
+    <td class="cust-table-cell">Safari</td>
+     <td class="cust-table-last-cell"></td>
+  </tr>
+  <tr>
+    <td class="cust-table-cell">Infocus Mondopad</td>
+    <td class="cust-table-cell">LifeSize Connections</td> 
+    <td class="cust-table-cell">Opera</td>
+     <td class="cust-table-last-cell"></td>
+  </tr>
+  <tr>
+    <td class="cust-table-cell">Ubiety Room
+<sm>(coming soon)</sm></td>
+    <td class="cust-table-cell">LifeSize ClearSea</td> 
+    <td class="cust-table-cell">Chromebook /
+Chromebox</td>
+     <td class="cust-table-last-cell"></td>
+  </tr>
+</table>
+			</div>
+			<p class="text-center">
+And many more...
+</p>
+		</div>
+	</div>
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    
+                    <div class="clearfix"></div>
+                    <h2 class="cust-title1">Push video to external endpoint</h2>
+                        <br>
+
+                        
+                    <p class="cust-para1">Simply select the video conference endpoint from your address book. The Ubiety bridge will then make outbound call to that endpoint and connect you automatically, no passcodes or dial in required!</p>
+                               <br>
+                                <p class="cust-para1">
+
+The beauty of this tool is the bridge knows you are located at this endpoint and you have full call control from the same personal device to manage all aspects of your conference.</p>
+                     <button class="btn btn-1 btn-1a">Learn More</button>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="cus-img" src="img/push-video-left.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+        <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                  <img class="cus-img" src="img/push-video-right.png" alt="">  
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    
+                    <div class="clearfix"></div>
+                    <h2 class="cust-title1">Wireless screen sharing</h2>
+                    <br>
+                    <p class="cust-para1">
+When connecting to a Cisco, Polycom or LifeSize endpoint from Ubiety, using wires for content sharing is a thing of the past. From the PC/Mac client or web browser share your content wirelessly to the endpoint and all remote participants with a click of a button.
+</p>
+                     <button class="btn btn-1 btn-1a">Learn More</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+<div class="row clearfix">
+		<div class="col-md-12 column text-center">
+			<img class="cus-img" alt="140x140" src="img/lapntab.png" />
+			<h3 class="cust-title1">
+				Transfer devices mid-conference
+			</h3>
+			<br>
+			<p class="cust-para1">
+				How many times have you been kicked out of that meeting room before you've finished your conference call? or start the call on your mobile and when you get to your desk want to transfer the call and upgrade to desktop video?
+			</p> 
+			<br>
+			<p>With Ubiety you can now transfer the video or audio call from any device mid-call. Within the app simply click to transfer and your call will be 
+magically moved.
+</p>
+			<button class="btn btn-1 btn-1a">Learn More</button>
+		</div>
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+ <div class="row clearfix">
+ <div class="col-md-4 column">
+			<img alt="140x140" src="img/phone1.png" />
+		</div>
+		<div class="col-md-8 column">
+			<h3 class="cust-title1" style="margin-top: 60px;">
+				Split audio from video
+			</h3>
+             <br>
+			<p class="cust-para1">
+				Have you ever tried to join a video conference from your mobile device with a weak mobile internet or wifi connection? It’s truly frustrating and you generally give up, abandon the call and switch everything to a phone call. Not how it should be in 2014.
+			</p> 
+			<br>
+			<p class="cust-para1">
+			With Ubiety, you can split the audio from your tablet to your mobile phone via the standard phone network. You still experience the great video and web collaboration on your tablet, but audio is delivered to your phone, guaranteeing consistent audio quality and privacy in a public place. The video and audio are still synced, so when you speak your video window will show as the active speaker to all other participants.
+			</p> 
+			<button class="btn btn-1 btn-1a">Learn More</button>
+		</div>
+		
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+            <div class="content-section-b" style="border-bottom: none;">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                  <img class="cus-img" src="img/landphone.png" alt="">  
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    
+                    <div class="clearfix"></div>
+                    <h2 class="cust-title1">Phone only conferencing</h2>
+                    <br>
+                    <p class="cus-para1">Fear not phone warriors, Ubiety is built with global telephony included at its 
+core and at truly unbeatable <a href="#">pricing.</a>
+</p>
+                   <br>
+                    <p class="cust-para1">It has all the features you’ll need. Security and global access numbers you 
+expect and what’s more, you can use Ubiety as a flawless phone conferencing 
+service with the ability to add the incredible web and video collaboration 
+integration if you want.
+</p>
+                     <button class="btn btn-1 btn-1a">Learn More</button>
+                </div>
+                
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+       <div class="row clearfix">
+		<div class="col-md-6 column" >
+			<h3 class="cust-title-main" >
+				Buddy lists
+			</h3>
+			<br>
+			<p class="cust-para1" >
+				Search and favorite all other Ubiety users within your organization. See presence of whos online, available or in a call. Also add any video conference endpoint, bridge, SIP URI, Ubiety user or Ubiety coSpace for your own personally created buddy list to click and call.
+
+			</p>
+		</div>
+		<div class="col-md-6 column" style="border-left: 1px solid #e7e7e7;">
+			<h3 class="cust-title-main" style="padding-left: 15px;">
+				Team coSpaces
+			</h3>
+			<br>
+			<p class="cust-para1" style="padding-left: 15px;">
+				Allow fellow team members to join your coSpace virtual meeting room for just a meeting, or permanently. Included is the ability to have persistent chat, not just for the one meeting, but ongoing chat that can be added to at anytime. Great for project based needs.
+
+			</p>
+		</div>
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+     <div class="content-section-a">
+
+        <div class="container">
+
+    <div class="row clearfix">
+    
+		<div class="col-md-4 column text-right" style="margin-top: 110px; width:37.5%;">
+			<ul>
+				<li class="cust-li">
+					Audio-web-video  consistent user  experience <span class="glyphicon glyphicon-ok-circle left-icon"></span>
+				</li>
+				<li class="cust-li">
+					Join from any device<span class="glyphicon glyphicon-ok-circle left-icon"></span>
+				</li>
+				<li class="cust-li">
+					Swap devices mid-call<span class="glyphicon glyphicon-ok-circle left-icon"></span>
+				</li>
+				<li class="cust-li">
+					Wireless screen sharing<span class="glyphicon glyphicon-ok-circle left-icon"></span>
+				</li>
+				<li class="cust-li">
+					Separate out audio<span class="glyphicon glyphicon-ok-circle left-icon"></span>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="col-md-4 column text-center" style="width: 25%;">
+			<img alt="140x140" src="img/phone2.png" />
+		</div>
+		<div class="col-md-4 column text-left" style="margin-top: 110px; width:37.5%;">
+			<ul>
+				<li class="cust-li">
+					<span class="glyphicon glyphicon-ok-circle right-icon"></span>Personal coSpace virtual meeting rooms for every user
+				</li>
+				<li class="cust-li">
+					<span class="glyphicon glyphicon-ok-circle right-icon"></span>Persistent chat
+				</li>
+				<li class="cust-li">
+					<span class="glyphicon glyphicon-ok-circle right-icon"></span>WebRTC for Browsers
+				</li>
+				<li class="cust-li">
+					<span class="glyphicon glyphicon-ok-circle right-icon"></span>Per month billing
+				</li>
+				<li class="cust-li">
+					<span class="glyphicon glyphicon-ok-circle right-icon"></span>No long term contracts
+
+				</li>
+			
+			</ul>
+		</div>
+		
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a gray section -->
+
+    
+    
+        <div class="banner footer-banner2">
+
+        <div class="container">
+
+<div class="row clearfix">
+	<div class="col-md-12 column text-center">
+			<h3 class="text-center cust-title1 cust-testi1">
+				Heres what Ubiety <span class="cus-font-color">customers are saying</span>
+
+			</h3>
+			</div>
+		<div class="col-md-4 column text-center">
+		
+			<div class="cust-testi">
+				<p class="cust-testi2">“Being a first time user I  would like to comment on your software. Ubiety is the highest quality video collaboration solution I have seen in the market yet”
+</p>
+		<p class="cust-testi3"><strong class="cust-testi4">Mark Gardner,</strong> Virgin</p>
+			</div>
+		</div>
+		<div class="col-md-4 column text-center">
+			<div class="cust-testi">
+				
+				<p class="cust-testi2">“"Simple to use, easiest graphic interface we have yet to see and great quality video. Plus any and every device, anywhere, anytime… great product!"
+
+</p>
+		<p class="cust-testi3"><strong class="cust-testi4">James Matthews,</strong> Whygo
+</p>
+			</div>
+			
+		</div>
+		<div class="col-md-4 column text-center">
+			<div class="cust-testi">
+			
+			<p class="cust-testi2">"Ubiety gives us the ability to scale our customer’s video consumption at an affordable price with extremely high quality"
+</p>
+		<p class="cust-testi3"><strong class="cust-testi4">Jeremy Johnson,</strong> Interactive Solutions</p>	
+
+			</div>
+		</div>
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+    
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+      <div class="row clearfix">
+		<div class="col-md-12 column text-center">
+			<h3 class="cus-title-pricing">
+				Pricing
+			</h3>
+			<img class="cus-img" alt="140x140" src="img/price_chart.png" />
+		</div>
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b white section-->
+    
+    
+        <div class="banner footer-banner1">
+
+        <div class="container">
+
+<div class="row clearfix">
+		<div class="col-md-12 column text-center">
+			<h3 class="text-center cust-title1">
+				Giving back
+
+			</h3>
+			<br>
+			<p class="cust-para1">
+				If we work together we can help create a better world. 
+We are committed to being 100% carbon neutral and for every conference minute you use on Ubiety we will donate a conference minute to a charitable cause.
+Our goal? the more you collaborate with your employees, customers and partners, the more we can enable collaboration for those that need it most.
+			</p> 
+			<button class="btn btn-2 btn-2a">Learn More</button>
+		</div>
+	</div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+    
+    
+
+
+    <footer style="background-color: #26313b;">
+        <div class="container">
+            <div class="row">
+           <div class="col-md-6 column">
+           <img src="img/logo.png" alt="">
+		</div>
+		<div class="col-md-6 column">
+		<div style="float: right;">
+                    <ul class="list-inline">
+                        <li><a href="#home">Press</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#about">Partners</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#services">Acano</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#contact">Support</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">&copy; 2014 Ubiety. All Rights Reserved</p>
+                    </div>
+                </div>
+		</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    
+    <script src="js/bootstrap.js"></script>
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="js/ubiety.js"></script>
+    
+    <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,.8);display:none;z-index:10000; }
+	#mc_embed_signup form{position:fixed; top:10%; left:50%; width:50%; margin-left:-25%; font:normal 100% Helvetica,Arial,sans-serif; font-size:14px; border-radius:4px; border:none; padding:10px 20px; background-color:#fff; color:#000; text-align:left;max-height:400px;overflow-y:auto;overflow-x:hidden;}
+	#mc_embed_signup a.mc_embed_close{background:transparent url(http://downloads.mailchimp.com/img/closebox.png) no-repeat; display:block; height:30px; width:30px; text-indent:-999em; position:absolute; top:-10px; right:-10px; display:none; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//co2neutralconferencing.us6.list-manage.com/subscribe/post?u=f8c9d2d42e9b5f4df9489950d&amp;id=ecb915ce30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<h2>Subscribe to our mailing list</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+	<label for="mce-LNAME">Last Name </label>
+	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+</div>
+<a href="#" id="mc_embed_close" class="mc_embed_close">Close</a>	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_f8c9d2d42e9b5f4df9489950d_ecb915ce30" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text'; window.mc.showPopup = true;window.mc.delayPopup = 7000;if (mc.showPopup) mc.evalPopup();}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+    
+   
+
+</body>
+
+</html>

@@ -29,7 +29,7 @@ border-color: none;
 .nav-black {
 background-color: #26313b; 
 border-color: #26313b; 
-	box-shadow: 0 0 6px rgba(0, 0, 0, .26);
+box-shadow: 0 0 6px rgba(0, 0, 0, .26);
 }
 
 .btn-lg-cust {
@@ -220,6 +220,11 @@ margin-top: 45px;
 
 }
 
+.cus-title-header {
+font-size: 30px;
+
+}
+
 .cust-para1{
 font-size: 16px;
 }
@@ -240,8 +245,11 @@ width: 90%;
 }
 
 .header-title1{
-margin-top: 30px; 
-	margin-bottom: 30px;
+font-family: 'open_sanslight', sans-serif !important;
+font-weight: 100;
+font-size: 30px;
+margin-top: 40px;
+margin-bottom: 18px;
 }
 
 .header-title2{

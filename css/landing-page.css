@@ -61,7 +61,7 @@ p {
 
 .intro-header {
 	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-	padding-bottom: 50px;
+	padding-bottom: 35px;
 	color: #f8f8f8;
 	background: url(../img/header.png) no-repeat center center;
 	background-size: cover;
@@ -323,6 +323,28 @@ p.copyright {
 
 
 
+/* Sign up - Button 5 */
+.btn-5 {
+    border: 1px solid #00aee0;
+    color: #ffffff;
+    background: #00aee0;
+    padding: 6px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-right: 15px;
+}
+
+/* Free Trial - Button 5a */
+.btn-5a:hover,
+.btn-5a:active {
+	color: #ffffff;
+    background: #0591b9;
+    border: 1px solid #0591b9;
+}
+
+
+
+
 
 /* Slider */
 
@@ -333,5 +355,30 @@ p.copyright {
 
 #pager {
     margin-top:30px;
+
+}
+
+
+
+.full-img-r {
+position: relative;
+top: -350px;
+float: right;
+clear: both;
+
+}
+
+.cus-image-1 {
+width: 650px;
+
+}
+
+
+.footer-links {
+    color: #98a4af;
+}
+
+.text-muted {
+color: #58626a;
 
 }
