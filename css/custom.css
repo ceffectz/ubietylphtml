@@ -598,6 +598,12 @@ height: 30px;
 
 /*pricing table css*/
 
+@media (max-width: 512px) {
+.pricing-three-column {
+width: 100% !important;
+}
+}
+
 
 .pricing-table .plan {
   margin-left:0px;
@@ -625,6 +631,7 @@ height: 30px;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
+  margin-bottom: 30px;
 }
   
 .plan-name-bronze {
